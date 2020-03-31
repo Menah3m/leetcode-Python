@@ -17,12 +17,3 @@ class Solution(object):
             res.append(res[-1]+res[-2])
         return (res[n]%(1000000007))
 
-'''这里的fib是一个生成器generator'''
-def fib(n):
-    x, a, b = 0, 1, 1
-    while x < n:
-        yield b
-        a, b = b, a+b
-        x+=1
-    return 'done'
-
