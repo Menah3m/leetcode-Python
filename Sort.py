@@ -1,10 +1,10 @@
 
 '''
-QuickSort
+BubbleSort
 时间复杂度:O(n*n)
 '''
 class Solution(object):
-    def quickSort(self, nums):
+    def bubbleSort(self, nums):
         """
         :type nums: List[int]
         :rtype: List[int]
