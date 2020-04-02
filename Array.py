@@ -41,3 +41,21 @@ class Solution:
             return sorted_nums[-1][0]
         else:
             return -1
+
+'''
+leetcode.66
+加一
+思路： 1.列表转字符串
+      2.字符串转整数
+      3.整数加一
+      4.整数转字符串
+      5.字符串转列表
+'''
+ class Solution:
+     def plusOne(self, digits: List[int]) -> List[int]:
+         s = ''.join([str(x) for x in digits])
+         i = int(s)
+         i = str(i + 1)
+
+         return [int(x) for x in list(i)]
+
