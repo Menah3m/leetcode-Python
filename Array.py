@@ -59,3 +59,6 @@ leetcode.66
 
          return [int(x) for x in list(i)]
 
+
+
+
