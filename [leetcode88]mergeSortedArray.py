@@ -7,3 +7,8 @@ class Solution:
             return nums1
         nums1[m:m+n]=nums2
         nums1.sort()
+'''
+leetcode 88
+合并两个有序数组
+思路：用切片赋值
+'''
