@@ -64,24 +64,21 @@ def quickSort(nums, l, r):
 '''
 Quicksort 代码2
 '''
-class Solution(object):
-    def sortArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
-        nums = self.quickSort(nums)
-        return nums
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        return self.quickSort(nums)
 
     def quickSort(self, nums):
-        le = len(nums)
-        if le < 2:
+        if len(nums) < 2:
             return nums
-        begin, end = [], []
+
+        before, after = [], []
         pivot = nums.pop()
-        for i in range(le - 1):
+        for i in range(len(nums)):
             if nums[i] < pivot:
-                begin.append(nums[i])
+                before.append(nums[i])
             else:
-                end.append(nums[i])
-        return self.quickSort(begin) + [pivot] + self.quickSort(end)
+                after.append(nums[i])
+
+        return self.quickSort(before) + [pivot] + self.quickSort(after)
+
