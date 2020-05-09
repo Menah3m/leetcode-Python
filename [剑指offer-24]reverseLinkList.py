@@ -13,10 +13,10 @@ class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         if not head or not head.next: return head
 
-        Last = None
+        Last = None               //Last代表当前指针的上一个，初始值为空
         
         while head:
-            tmp = head.next
+            tmp = head.next       
             head.next = Last
             Last = head
             head = tmp
