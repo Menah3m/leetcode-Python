@@ -43,3 +43,22 @@ class Solution:
                         j -= 1
                     else:
                         return [nums_sorted[i][0], nums_sorted[j][0]]
+
+
+'''
+思路三：哈希表
+1.创建一个词典
+2.key是列表中的数，value是这个数的索引
+3.遍历整个list，判断 target-当前位置的数 是否在词典中
+  若在，返回value  若不在，添加该位置的数到词典中
+
+'''
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        for i in range(len(nums)):
+            if target-nums[i] in d:
+                return [d[target-nums[i]], i]
+            else:
+                d[nums[i]] = i
+        return []
