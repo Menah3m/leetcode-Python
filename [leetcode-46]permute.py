@@ -19,6 +19,24 @@ class Solution:
 
 
 '''
+使用递归解决全排列
+'''
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        if len(nums) <= 1: return [nums]
+
+        self.res = []
+
+        def helper(path, cand):
+            if cand == []:
+                self.res.append(path)
+            for k, v in enumerate(cand):
+                helper(path+[v],cand[:k]+cand[k+1:])
+            
+        helper([], nums)
+        return self.res
+
+'''
 剑指offer-38
 
 输入一个字符串，打印出该字符串中字符的所有排列。
