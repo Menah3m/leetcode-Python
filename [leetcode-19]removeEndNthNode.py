@@ -29,6 +29,10 @@
 #         self.val = x
 #         self.next = None
 
+#思路：1.使用双指针思想，前指针先移动n，然后后指针从头开始，两个指针同时移动，
+#        当前指针移动到最后时，将后指针的下一跳指向下下个节点即可
+#     2. 边缘情况：要求删除头节点，此时无法直接删除
+#        解决方案：设置虚拟头节点，使其指向真正的头节点
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         if not head:
