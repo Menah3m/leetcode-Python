@@ -26,11 +26,12 @@ class Solution:
         cur = head
         pre = virtualhead
 
-        while cur != None:
+        while pre.next:
             if cur.val == val:
-                cur = cur.next
-                pre.next = cur                
+                pre.next = cur.next
+                cur = cur.next                   
             else:
-                pre, cur = cur, cur.next
+                pre = cur
+                cur = cur.next
  
         return virtualhead.next
