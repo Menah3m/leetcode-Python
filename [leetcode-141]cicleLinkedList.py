@@ -18,15 +18,13 @@ class Solution:
     def hasCycle(self, head: ListNode) -> bool:
         if not head or not head.next: return False
 
-        slow = head
-        quick = head
+        quick = slow = head
         while slow and quick:
             slow = slow.next
             if quick.next:
                 quick = quick.next.next
             else:
                 return False
-            
             if slow is quick:
                 return True
         return False
