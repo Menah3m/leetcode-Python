@@ -24,13 +24,14 @@ class Stack(object):
         return len(self.stack)
 
 
-s =Stack()
+if __name__ == "__main__":
+    s =Stack()
 
-s.push(2)
-print(s.peek())
-s.push(3)
-print(s.peek())
-print(s.size())
-s.pop()
-print(s.peek())
-print(s.is_empty())
+    s.push(2)
+    print(s.peek())
+    s.push(3)
+    print(s.peek())
+    print(s.size())
+    s.pop()
+    print(s.peek())
+    print(s.is_empty())
