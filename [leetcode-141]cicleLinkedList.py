@@ -22,7 +22,7 @@ class Solution:
         while slow and quick:
             slow = slow.next
             if quick.next:
-                quick = quick.next.next
+                quick = quick.next.next #前提是quick的下一个节点存在
             else:
                 return False
             if slow is quick:
