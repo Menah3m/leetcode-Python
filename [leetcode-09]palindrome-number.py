@@ -23,9 +23,13 @@
 链接：https://leetcode-cn.com/problems/palindrome-number
 
 """
+### 转字符串
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        return x >= 0 and str(x)==str(x)[::-1]
 
 
-
+### 不转字符串
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x < 0:
