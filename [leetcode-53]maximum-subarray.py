@@ -19,7 +19,25 @@
 # 一遍遍历
 # 对于每一个数，若前面的子数组和为正，则加上前面的子数组作为新的子数组，
 # 若为负则保留自身作为新的子数组；
-# 每次遍历都与当前最大子数组和做比较，保留较大者。
+# 每次遍历都与当前最大子序和做比较，保留较大者。
+
+#代码1
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        sums = nums[0]
+        res = sums
+        for i in range(1, len(nums)):
+            if sums < 0:
+                sums = nums[i]
+            else:
+                sums += nums[i]
+            res = max(res, sums)
+        return res
+
+
+
+
+#代码2
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
     
@@ -27,6 +45,17 @@ class Solution:
 
         for num in nums[1:]:
             temp_sum = max(num, num + temp_sum)
+            max_sum = max(max_sum, temp_sum)
+
+        return max_sum
+
+#代码3
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        temp_sum = max_sum =  float("-inf")
+
+        for num in nums:
+            temp_sum = max(num, temp_sum + num)
             max_sum = max(max_sum, temp_sum)
 
         return max_sum
