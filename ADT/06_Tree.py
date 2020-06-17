@@ -33,3 +33,26 @@ class Tree(object):
                     #如果左右子树都不为空，加入队列继续判断
                     queue.append(cur.lchild)
                     queue.append(cur.rchild)
+    def preorder(self, root):
+        """递归实现先序遍历"""
+        if root == None:
+            return 
+        print(root.elem)
+        self.preorder(root.lchild)
+        self.preorder(root.rchild)
+
+    def inorder(self, root)
+        """递归实现中序遍历"""
+        if root == None:
+            return 
+        self.preorder(root.lchild)
+        print(root.elem)
+        self.preorder(root.rchild)
+
+    def postorder(self, root):
+        """递归实现后序遍历"""
+        if root == None:
+            return 
+        self.preorder(root.lchild)
+        self.preorder(root.rchild)
+        print(root.elem)
