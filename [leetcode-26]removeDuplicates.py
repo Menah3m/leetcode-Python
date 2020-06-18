@@ -29,9 +29,9 @@ class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if not nums:return 0
 
-        res = 0
+        i = 0
         for num in nums:
-            if nums[res] != num:
-                res += 1
-                nums[res] = num
-        return res+1
+            if num != nums[i]:
+                i += 1
+                nums[i] = num
+        return i+1
