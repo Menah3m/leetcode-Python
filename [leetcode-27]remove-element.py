@@ -46,7 +46,7 @@ for (int i = 0; i < len; i++) {
 链接：https://leetcode-cn.com/problems/remove-element
 
 """
-
+####思路1 从头遍历，碰到target就移除，i不用加一（直接得到下一个值） 否则就i加一
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         if not nums:return 0
@@ -57,4 +57,15 @@ class Solution:
                 continue
             else:
                 i += 1
+        return len(nums)
+
+
+
+###思路2  倒序遍历，碰到target则pop出去
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        if not nums:return 0
+        for i in range(len(nums)-1, -1, -1):
+            if nums[i] == val:
+                nums.pop(i)
         return len(nums)
