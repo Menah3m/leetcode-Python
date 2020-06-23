@@ -14,6 +14,7 @@ leetcode-24
 #         self.val = x
 #         self.next = None
 
+###递归
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
         if not head or not head.next:
@@ -24,3 +25,19 @@ class Solution:
         re.next = head
 
         return re
+
+
+### 非递归
+class Solution:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        if not head or not head.next:
+            return head
+        virtual = ListNode(1)
+        virtual.next = head
+        cur = virtual
+        while cur.next and cur.next.next:
+            a, b = cur.next, cur.next.next
+            cur.next, a.next = b, b.next
+            b.next = a
+            cur = cur.next.next
+        return virtual.next
