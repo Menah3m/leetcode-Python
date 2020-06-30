@@ -11,7 +11,7 @@ class Tree(object):
     def __init__(self,root=None):
         self.root = root
 
-    def add(self, elem)
+    def add(self, elem):
         """为树添加节点"""
         node = Node(elem)
         if self.root == None:
