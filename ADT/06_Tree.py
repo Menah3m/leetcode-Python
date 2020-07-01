@@ -1,4 +1,4 @@
-# 树的 ADT
+"""树的ADT"""
 
 class Node(object):
     #节点类
