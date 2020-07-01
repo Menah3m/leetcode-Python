@@ -1,3 +1,6 @@
+"""栈的实现"""
+
+
 class Stack(object):
     """栈"""
     def __init__(self):
