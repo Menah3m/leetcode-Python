@@ -1,3 +1,5 @@
+"""单链表的ADT"""
+
 class SingleNode(object):
     """单链表的节点实现"""
     def __init__(self, val):
