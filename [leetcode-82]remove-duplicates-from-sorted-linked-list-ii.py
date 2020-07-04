@@ -32,7 +32,7 @@ class Solution:
         pre = dummy_head
         while cur:
             cur_val = cur.val
-            is_dup = False     // flag:判断当前节点是否为重复值
+            is_dup = False     // flag作用:判断当前节点是否为重复值
             while cur.next:    // 往下遍历，如果重复，则跳过该节点
                 if cur.next.val == cur_val:
                     cur = cur.next
