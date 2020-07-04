@@ -29,20 +29,20 @@ class Solution:
         dummy_head = ListNode(0)
         dummy_head.next = head
         cur = dummy_head
-        pre = None
+        pre = None      //pre用于保存第一个断点的前一个节点
         for _ in range(m):
             pre = cur
             cur = cur.next
         
-        front = cur
-        temp = None
-        pre_temp = None
+        back = cur      // 该节点为反转后的末尾节点（反转前的m位置的节点）
+        temp = None     //用于存放反转时的下一个节点
+        pre_temp = None //用于存放反转后的最后一个节点（反转前指向m位置的节点）
         for _ in range(n-m+1):
             temp = cur.next
             cur.next = pre_temp
             pre_temp= cur
             cur = temp
 
-        pre.next = pre_temp
-        front.next = temp
+        pre.next = pre_temp  //将第一段和反转后的头节点相连
+        back.next = temp    
         return dummy_head.next
