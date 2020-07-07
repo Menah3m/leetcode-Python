@@ -37,3 +37,14 @@ class Solution:
             pre = cur      // pre 移动
             cur = tmp      // cur 移动
         return pre         // 原来的末尾节点是新链表的头节点
+
+
+### 递归法
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head or not head.next:
+            return head
+        p = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        return p
