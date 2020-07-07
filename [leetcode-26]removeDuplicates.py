@@ -31,7 +31,7 @@ class Solution:
 
         pos = 0
         for num in nums:
-            if num != nums[i]:
+            if num != nums[pos]:
                 pos += 1
-                nums[i] = num
+                nums[pos] = num
         return pos+1
