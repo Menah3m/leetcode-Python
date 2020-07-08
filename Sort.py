@@ -43,24 +43,27 @@ QuickSort
 '''
 
 
-def partition(nums, l, r):
-    pivot = nums[r]
-    i = l - 1
-    for j in range(l, r):
-        if nums[j] < pivot:
-            i += 1
-            nums[i], nums[j] = nums[j], nums[i]
-    nums[i + 1], nums[r] = nums[r], nums[i + 1]
-    return i + 1
+def partition(nums, start, end):
+    pivot = nums[end]
+    slow = start - 1
+    for fast in range(start, end):
+        if nums[fast] < pivot:
+            slow += 1
+            nums[slow], nums[fast] = nums[fast], nums[slow]
+    nums[slow+1], nums[end] = nums[end], nums[slow+1]
+    return slow + 1
 
 
-def quickSort(nums, l, r):
-    if l < r:
-        pivot_index = partition(nums, l, r)
-        quickSort(nums, l, pivot_index - 1)
-        quickSort(nums, pivot_index + 1, r)
+def quickSort(nums, start, end):
+    if start < end:
+        pivot_index = partition(nums, start, end)
+        quickSort(nums, start, pivot_index - 1)
+        quickSort(nums, pivot_index + 1, end)
     return nums
 
+def QuickSort(nums):
+    quickSort(nums, 0 , len(nums)-1)
+    return nums
 '''
 Quicksort 代码2
 '''
