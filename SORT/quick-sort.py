@@ -19,35 +19,39 @@ def partition(nums, start, end):
     return slow + 1
 
 
-def quickSort(nums, start, end):
+def quick_Sort(nums, start, end):
     if start < end:
         pivot_index = partition(nums, start, end)
-        quickSort(nums, start, pivot_index - 1)
-        quickSort(nums, pivot_index + 1, end)
+        quick_Sort(nums, start, pivot_index - 1)
+        quick_Sort(nums, pivot_index + 1, end)
     return nums
 
 def QuickSort(nums):
-    quickSort(nums, 0 , len(nums)-1)
+    quick_Sort(nums, 0 , len(nums)-1)
     return nums
+
+nums = [9,2,90,23,1,78]
+print(QuickSort(nums))
+
 '''
 Quicksort 代码2
 使用额外的数组空间
 递归实现
 '''
-class Solution:
-    def sortArray(self, nums: List[int]) -> List[int]:
-        return self.quickSort(nums)
+# class Solution:
+#     def sortArray(self, nums: List[int]) -> List[int]:
+#         return self.quickSort(nums)
 
-    def quickSort(self, nums):
-        if len(nums) < 2:
-            return nums
+#     def quickSort(self, nums):
+#         if len(nums) < 2:
+#             return nums
 
-        before, after = [], []
-        pivot = nums.pop()
-        for i in range(len(nums)):
-            if nums[i] < pivot:
-                before.append(nums[i])
-            else:
-                after.append(nums[i])
+#         before, after = [], []
+#         pivot = nums.pop()
+#         for i in range(len(nums)):
+#             if nums[i] < pivot:
+#                 before.append(nums[i])
+#             else:
+#                 after.append(nums[i])
 
-        return self.quickSort(before) + [pivot] + self.quickSort(after)
+#         return self.quickSort(before) + [pivot] + self.quickSort(after)
