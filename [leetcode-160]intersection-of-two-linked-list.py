@@ -58,6 +58,12 @@
 #         self.next = None
 
 class Solution:
+    """
+    思路：
+    1. 得到两链表的长度并比较，指定长短链表
+    2. 长链表的指针先移动两链表长度差的距离
+    3. 两链表的指针同时移动，直到出现同一节点
+    """
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
         l1_len = self.get_list_length(headA)
         l2_len = self.get_list_length(headB)
