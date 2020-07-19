@@ -16,7 +16,7 @@
 链接：https://leetcode-cn.com/problems/length-of-last-word
 
 """
-
+# 思路1
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         if not s:
@@ -29,3 +29,11 @@ class Solution:
             else:
                 count += 1
         return count
+
+# 思路2
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        s = s.rstrip()
+        if not s:
+            return 0
+        return len(s.split()[-1])
