@@ -45,9 +45,11 @@ class Solution:
         j = 0
         nums[j] = nums[0]
         for i in range(1,len(nums)):
-            while nums[i] != nums[j]:
+            if nums[i] != nums[j]:
                 j += 1
                 nums[j] = nums[i]
+            else:
+                continue
         return j+1
             
             
