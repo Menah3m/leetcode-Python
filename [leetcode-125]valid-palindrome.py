@@ -17,6 +17,7 @@
 
 """
 
+# 双指针  关键点：如何去掉除数字和字母外的其他字符
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         if len(s) == 0: return True
@@ -29,4 +30,25 @@ class Solution:
                 return False
             start += 1
             end -= 1
+        return True
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = s.lower()
+        s = s.replace(' ','')
+        cache = ''
+        for i in s:
+            if not i.isdigit() and not i.isalpha():
+                continue
+            else:
+                cache += i
+        if not cache:
+            return True
+        l, r = 0, len(cache)-1
+        while l <= r:
+            if cache[l] != cache[r]:
+                return False
+            else:
+                l += 1
+                r -= 1
         return True
