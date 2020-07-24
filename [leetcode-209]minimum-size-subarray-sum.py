@@ -20,10 +20,10 @@ class Solution:
         l, cur = 0, 0
         min_len = float("inf")
 
-        for r in range(len(nums)):
-            cur += nums[r]
-            while cur >= s:
-                min_len = min(min_len, r-l+1)
-                cur -= nums[l]
+        for r in range(len(nums)):#增加右指针进行遍历
+            cur += nums[r]        #求和
+            while cur >= s:       #若此时区间内的和大于目标值则进行比较
+                min_len = min(min_len, r-l+1) # 更新 区间最小长度
+                cur -= nums[l]                #移动左指针，同时要将左端值从和当中去掉
                 l += 1
         return min_len if min_len != float("inf") else 0
