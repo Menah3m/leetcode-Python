@@ -48,3 +48,12 @@ class Solution:
 
         return isMirrors(root, root)
 
+
+# 代码2
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        def helper(L, R):
+            if not L and not R:return True
+            if not L or not R or L.val != R.val:return False
+            return helper(L.left, R.right) and helper(L.right, R.left)
+        return helper(root.left, root.right) if root else True
