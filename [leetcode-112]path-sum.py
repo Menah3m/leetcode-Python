@@ -21,7 +21,6 @@
 链接：https://leetcode-cn.com/problems/path-sum
 
 """
-
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
