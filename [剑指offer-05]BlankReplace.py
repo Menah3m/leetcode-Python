@@ -18,3 +18,14 @@ class Solution(object):
                 list_new.append(char)
 
         return ''.join(list_new)
+
+#代码2
+class Solution:
+    def replaceSpace(self, s: str) -> str:
+        res = ''
+        for i in s:
+            if i == ' ':
+                res += '%20'
+            else:
+                res += i
+        return res    
