@@ -15,6 +15,8 @@ s = ""
 
 """
 
+# 思路： 哈希表，第一次遍历到时设置value为 True，后面再次遍历到的时候设置value为False
+# 再次遍历s，判断dic中的键值，返回第一个值为True的键（说明只遍历到一次）
 class Solution:
     def firstUniqChar(self, s: str) -> str:
         dic = {}
@@ -24,3 +26,4 @@ class Solution:
             if dic[i]:
                 return i
         return " "
+
