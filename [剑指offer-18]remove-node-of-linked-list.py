@@ -28,6 +28,28 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
+
+
+# 代码1
+
+class Solution:
+    def deleteNode(self, head: ListNode, val: int) -> ListNode:
+        if not head:
+            return head
+        pre, vir_head = ListNode(0), ListNode(0)
+        vir_head.next = head
+        cur = vir_head
+        pre.next = cur
+        while cur.next:
+            if cur.next.val == val and cur.next.next:
+                cur.next = cur.next.next
+            cur = cur.next
+            pre = pre.next
+        if pre.next.val == val:
+            pre.next = None
+        return vir_head.next
+
+# 代码2 精简版
 class Solution:
     def deleteNode(self, head: ListNode, val: int) -> ListNode:
         if not head:
@@ -43,3 +65,4 @@ class Solution:
                 pre = pre.next
             cur = cur.next
         return dummy.next
+
