@@ -11,3 +11,14 @@ class Solution:
                 return num
             else:
                 s.add(num)
+
+
+# 代码2
+class Solution:
+    def findRepeatNumber(self, nums: List[int]) -> int:
+        dic = {}
+        for i in range(len(nums)):
+            dic[nums[i]] = nums[i] in dic
+            if dic[nums[i]] == True:
+                return nums[i]
+        return False
