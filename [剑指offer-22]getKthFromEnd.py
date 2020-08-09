@@ -37,3 +37,17 @@ class Solution:
             l = l.next
 
         return l
+
+# 代码2
+class Solution:
+    def getKthFromEnd(self, head: ListNode, k: int) -> ListNode:
+        if not head:
+            return head
+        post = pre = head
+        for i in range(k):
+            pre = pre.next
+        while pre:
+            pre = pre.next
+            post = post.next
+
+        return post
