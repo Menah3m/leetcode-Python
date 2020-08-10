@@ -27,7 +27,7 @@ leetcode-206
 
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        if not head or not head.next:
+        if not head:
             return head
         pre = None
         cur = head
@@ -42,7 +42,7 @@ class Solution:
 ### 递归法
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        if not head or not head.next:
+        if not head:
             return head
         p = self.reverseList(head.next)
         head.next.next = head
