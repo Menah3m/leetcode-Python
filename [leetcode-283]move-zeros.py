@@ -15,6 +15,7 @@
 
 """
 
+# 思路：快慢指针  快指针用来遍历每个数， 慢指针用来指定0的位置
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
