@@ -44,7 +44,7 @@ class Solution:
            如果是左括号，直接入栈，
            如果是右括号，则需要和栈顶元素比较，匹配的上则将栈顶元素推出去，匹配不上则为无效括号
            如果一开始就是右括号，则为无效括号'''
-        stack = []     //创建堆栈
+        stack = []     //创建栈
         parent_map = {')':'(', ']':'[', '}':'{'}   //创建筛选字典
         if len(s) % 2 != 0:                        //先判断长度，奇数则必定为无效括号
             return False
@@ -54,3 +54,27 @@ class Solution:
             elif not stack or parent_map[c] != stack.pop():  //这里 比较和推出 时实现了
                 return False
         return not stack                                     // 最后栈为空则说明全部都配对了
+
+
+#思路2
+'''
+遇到左括号-》 入栈
+遇到右括号-》判断是否和栈顶的元素相等，相等则出栈，不相等则提前返回false
+
+最后栈为空则返回true
+'''
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s) % 2 == 1:
+            return False
+        stack = []
+        dic = {')':'(', '}':'{', ']':'['}
+        for i in s:
+            if stack and i in dic:
+                if stack[-1] == dic[i]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(i)
+        return not stack
