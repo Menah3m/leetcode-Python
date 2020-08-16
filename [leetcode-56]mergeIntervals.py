@@ -18,6 +18,7 @@
 '''
 
 
+# 思路： 先排序，然后比较[x1,y1],[x2,y2]中各个值：如果x2大于y1，则不变，否则合并
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         if not intervals:
@@ -31,3 +32,20 @@ class Solution:
             else:
                 res[-1][1]=max(y,res[-1][1])
         return res
+
+# 代码2 
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        if not intervals:
+            return intervals
+        l, r = 0, 1
+        intervals = sorted(intervals)
+        while r <= len(intervals)-1:
+            x1, y1 = intervals[l]
+            x2, y2 = intervals[r]
+            if x2 > y1:
+                l, r = l+1, r+1
+            else:
+                intervals[l] = (x1, max(y1, y2))
+                intervals.pop(r)
+        return intervals
