@@ -2,4 +2,4 @@
 ---
 + Python
 + Leetcode
-+ Data Struct
++ Data Structure
